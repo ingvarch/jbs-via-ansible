@@ -1,12 +1,30 @@
 # Using
 
-1. git clone
-2. cd jbs-via-ansible/ansible/playbooks/jbs/
-3. cp ansible.cfg.example ansible.cfg # and modify
-4. cp ssh.cfg.example ssh.cfg # and modify
-5. Update group_vars and inventory files
-6. ansible-playbook -i inventory/dev host.yml # For installation docker and run containers - teamcity, youtrack, upsource
-7. ansible-playbook -i inventory/dev tc-agent.yml # For installation docker and run containers with teamcity agents
+- Clone repository
+```
+git clone git@github.com:ingvarch/jbs-via-ansible.git
+```
+- Change dir to jbs
+```
+cd jbs-via-ansible/ansible/playbooks/jbs/
+```
+- Create ansible config from example and modify it
+```
+cp ansible.cfg.example ansible.cfg
+```
+- If you use bastion you can create local ssh config and modify it
+```
+cp ssh.cfg.example ssh.cfg
+```
+- Update "group_vars" and "inventory" files
+- For installation docker and run containers - teamcity, youtrack, upsource on Host server
+```
+ansible-playbook -i inventory/dev host.yml 
+```
+- For installation docker and run containers with teamcity agents
+```
+ansible-playbook -i inventory/dev tc-agent.yml 
+```
 
 # Requirements
 
