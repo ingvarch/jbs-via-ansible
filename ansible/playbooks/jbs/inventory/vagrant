@@ -1,0 +1,5 @@
+[vagrant:children]
+jbs
+
+[jbs]
+jbs  ansible_ssh_host=192.168.111.111 ansible_ssh_port=22

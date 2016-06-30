@@ -1,0 +1,14 @@
+- name: Docker pull Upsorce
+  docker_image:
+    name: dzwicker/docker-upsource
+    tag: "{{ upsource.docker_image.tag }}"
+
+- name: Docker run Upsorce
+  docker:
+    name: docker-upsource
+    image: dzwicker/docker-upsource
+    state: reloaded
+    ports:
+    - "0.0.0.0:8081:8080"
+    # env:
+    #     UPSOURCE_VERSION: 3.0.4291

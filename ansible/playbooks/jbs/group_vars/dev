@@ -1,0 +1,13 @@
+---
+teamcity_agent:
+  teamcity_server: http://10.135.26.200:8111
+  docker_image:
+    tag: latest
+
+upsource:
+  docker_image:
+    tag: latest
+
+teamcity:
+  docker_image:
+    tag: latest

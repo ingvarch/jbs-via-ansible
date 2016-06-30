@@ -1,0 +1,12 @@
+- name: Docker pull TeamCity
+  docker_image:
+    name: sjoerdmulder/teamcity
+    tag: "{{ teamcity.docker_image.tag }}"
+
+- name: Docker run TeamCity
+  docker:
+    name: docker-teamcity
+    image: sjoerdmulder/teamcity
+    state: reloaded
+    ports:
+    - "0.0.0.0:8111:8111"

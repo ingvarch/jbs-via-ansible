@@ -1,0 +1,3 @@
+teamcity:
+  docker_image:
+    tag: latest

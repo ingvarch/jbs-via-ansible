@@ -3,3 +3,4 @@
 *.vagrant
 
 ansible.cfg
+ssh.cfg

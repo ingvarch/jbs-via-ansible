@@ -1,0 +1,14 @@
+[dev:children]
+proxy
+host
+tca
+
+[proxy]
+proxy  ansible_ssh_host=46.101.180.192 ansible_ssh_port=22
+
+[host]
+host  ansible_ssh_host=10.135.26.200 ansible_ssh_port=22
+
+[tca]
+tc-agent01 ansible_ssh_host=10.135.26.114 ansible_ssh_port=22
+tc-agent02 ansible_ssh_host=10.135.26.148 ansible_ssh_port=22

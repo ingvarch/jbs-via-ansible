@@ -1,0 +1,4 @@
+teamcity_agent:
+  teamcity_server: http://localhost:8111
+  docker_image:
+    tag: latest

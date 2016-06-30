@@ -1,0 +1,45 @@
+---
+- name: apt-get update
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  register: apt_result
+  until: apt_result|success
+  retries: 3
+  delay: 1
+  ignore_errors: yes
+
+- name: retry if needed using command apt-get update (ansible bag with apt-get)
+  command: apt-get update
+  when: apt_result|failed
+
+- name: Install required system packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ntp
+    - vim
+    - htop
+    - debconf-utils
+    - python-software-properties
+    - software-properties-common
+    - build-essential
+    - sysstat
+    - unzip
+    - curl
+    - facter
+    - libssl-dev
+    - python-dev
+    - libxt-dev
+    - libcurl4-gnutls-dev
+    - libexpat1-dev
+    - zlib1g-dev
+    - libx11-dev
+    - tree
+    - libxml2-utils
+    - git
+    - sudo
+    - apt-transport-https
+    - ca-certificates
+    - python-pip

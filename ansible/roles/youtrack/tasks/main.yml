@@ -1,0 +1,15 @@
+- name: Docker pull youtrack
+  docker_image:
+    name: dzwicker/docker-youtrack
+    tag: "{{ youtrack.docker_image.tag }}"
+
+- name: Docker run youtrack
+  docker:
+    name: docker-youtrack
+    image: dzwicker/docker-youtrack
+    state: reloaded
+    pull: always
+    ports:
+    - "0.0.0.0:8080:8080"
+    # env:
+    #     YOUTRACK_VERSION: 6.5.17057

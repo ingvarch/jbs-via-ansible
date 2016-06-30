@@ -1,0 +1,14 @@
+Host bastion
+  Hostname 46.101.180.192
+  User root
+  IdentityFile ~/.ssh/id_rsa
+
+Host 10.135.26.*
+  ProxyCommand ssh -q -A root@46.101.180.192 nc %h %p
+  ServerAliveInterval 60
+  TCPKeepAlive yes
+  ControlMaster auto
+  ControlPath ~/.ssh/ansible-%r@%h:%p
+  ControlPersist 8h
+  User root
+  IdentityFile ~/.ssh/id_rsa

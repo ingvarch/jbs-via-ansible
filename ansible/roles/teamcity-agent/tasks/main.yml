@@ -1,0 +1,15 @@
+- name: Docker pull TeamCity Agent
+  docker_image:
+    name: ingvarch/tc-agent
+    tag: "{{ teamcity_agent.docker_image.tag }}"
+
+- name: Docker run TeamCity Agent
+  docker:
+    name: docker-teamcity-agent
+    image: ingvarch/tc-agent
+    state: reloaded
+    ports:
+    - "0.0.0.0:9090:9090"
+    env:
+      TEAMCITY_SERVER: "{{ teamcity_agent.teamcity_server }}"
+      AGENT_NAME: "tc-agent-{{ ansible_ssh_host }}"

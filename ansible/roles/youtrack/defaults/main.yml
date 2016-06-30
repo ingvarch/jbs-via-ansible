@@ -1,0 +1,3 @@
+youtrack:
+  docker_image:
+    tag: latest

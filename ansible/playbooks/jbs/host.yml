@@ -1,0 +1,11 @@
+---
+- name: Playbook hbase-master
+  hosts: "host"
+  gather_facts: "True"
+  become: "True"
+  become_method: "sudo"
+
+  roles:
+    - { role: youtrack, tags: ['youtrack'] }
+    - { role: upsource, tags: ['upsource'] }
+    - { role: teamcity, tags: ['teamcity'] }

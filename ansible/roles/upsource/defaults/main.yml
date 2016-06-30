@@ -1,0 +1,3 @@
+upsource:
+  docker_image:
+    tag: latest
