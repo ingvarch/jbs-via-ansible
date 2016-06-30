@@ -1,5 +1,5 @@
 ---
-- name: Playbook hbase-master
+- name: Playbook teamcity-agent
   hosts: "tca"
   gather_facts: "True"
   become: "True"

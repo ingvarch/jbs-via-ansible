@@ -1,5 +1,13 @@
 [vagrant:children]
-jbs
+host
+tca
 
-[jbs]
-jbs  ansible_ssh_host=192.168.111.111 ansible_ssh_port=22
+[host]
+host  ansible_ssh_host=192.168.111.111 ansible_ssh_port=22
+
+[tca]
+tc-agent01 ansible_ssh_host=192.168.111.10 ansible_ssh_port=22
+tc-agent02 ansible_ssh_host=192.168.111.11 ansible_ssh_port=22
+tc-agent03 ansible_ssh_host=192.168.111.12 ansible_ssh_port=22
+tc-agent04 ansible_ssh_host=192.168.111.13 ansible_ssh_port=22
+tc-agent05 ansible_ssh_host=192.168.111.14 ansible_ssh_port=22

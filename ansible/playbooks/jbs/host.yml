@@ -1,5 +1,5 @@
 ---
-- name: Playbook hbase-master
+- name: Main Playbook
   hosts: "host"
   gather_facts: "True"
   become: "True"
