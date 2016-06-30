@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   (1..N).each do |machine_id|
     config.vm.define "tca#{machine_id}" do |machine|
       machine.vm.hostname = "tca#{machine_id}"
-      machine.vm.network "private_network", ip: "192.168.111.10#{machine_id}"
+      machine.vm.network "private_network", ip: "192.168.111.#{10+machine_id-1}"
 
       machine.vm.provision :ansible do |ansible|
         ansible.limit = "all"
